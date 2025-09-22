@@ -1,6 +1,6 @@
 #include <stdio.h>
 #include <stdlib.h>
-#include <sqlite3.h>
+#include "sqlite3.h"
 #include "database.h"
 #include "pizzas.h"
 #include "bebidas.h"
