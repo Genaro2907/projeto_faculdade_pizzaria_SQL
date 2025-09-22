@@ -18,7 +18,7 @@ void realizarPedido(sqlite3 *db) {
     limparBuffer();
     scanf(" %[^\n]", cliente);
 
-    printf("Endereço: ");
+    printf("Endereco: ");
     limparBuffer();
     scanf(" %[^\n]", endereco);
 
@@ -115,7 +115,7 @@ void listarPedidos(sqlite3 *db) {
     while (sqlite3_step(stmt) == SQLITE_ROW) {
         printf("ID: %d\n", sqlite3_column_int(stmt, 0));
         printf("Cliente: %s\n", sqlite3_column_text(stmt, 1));
-        printf("Endereço: %s\n", sqlite3_column_text(stmt, 2));
+        printf("Endereco: %s\n", sqlite3_column_text(stmt, 2));
         printf("Telefone: %s\n", sqlite3_column_text(stmt, 3));
         printf("Pizza: %s\n", sqlite3_column_text(stmt, 4) ? (const char*)sqlite3_column_text(stmt, 4) : "Nenhuma");
         printf("Bebida: %s\n", sqlite3_column_text(stmt, 5) ? (const char*)sqlite3_column_text(stmt, 5) : "Nenhuma");

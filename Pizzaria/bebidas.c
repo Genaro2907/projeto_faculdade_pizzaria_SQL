@@ -25,7 +25,7 @@ void cadastrarBebida(sqlite3 *db) {
     limparBuffer();
     scanf(" %[^\n]", tamanho);
     
-    printf("Preço: ");
+    printf("Preco: ");
     limparBuffer();
     scanf(" %[^\n]", preco_str);
 
@@ -72,7 +72,7 @@ void listarBebidas(sqlite3 *db) {
         printf("ID: %d\n", sqlite3_column_int(stmt, 0));
         printf("Nome: %s\n", sqlite3_column_text(stmt, 1));
         printf("Tipo: %s\n", sqlite3_column_text(stmt, 2));
-        printf("Preço: R$ %.2f\n", sqlite3_column_double(stmt, 3));
+        printf("Preco: R$ %.2f\n", sqlite3_column_double(stmt, 3));
         printf("Tamanho: %s\n", sqlite3_column_text(stmt, 4));
         printf("----------------------------\n");
     }

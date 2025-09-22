@@ -33,7 +33,7 @@ int main() {
         printf("8. Excluir Bebida\n");
         printf("9. Excluir Pedido\n");
         printf("0. Sair\n");
-        printf("Escolha uma opção: ");
+        printf("Escolha uma opcao: ");
         scanf("%d", &opcao);
         
         switch(opcao) {
@@ -68,7 +68,7 @@ int main() {
                 printf("Saindo...\n");
                 break;
             default:
-                printf("Opção inválida!\n");
+                printf("Opcao invalida!\n");
         }
     } while (opcao != 0);
     

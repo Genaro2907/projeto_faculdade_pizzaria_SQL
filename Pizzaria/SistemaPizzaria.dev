@@ -29,7 +29,7 @@ IncludeVersionInfo=0
 SupportXPThemes=0
 CompilerSet=0
 CompilerSettings=0000000000000000000000000
-UnitCount=20
+UnitCount=19
 
 [VersionInfo]
 Major=1
@@ -139,25 +139,16 @@ OverrideBuildCmd=0
 BuildCmd=
 
 [Unit10]
-FileName=pizzaria.db
-Folder=
-Compile=0
-Link=0
-Priority=1000
-OverrideBuildCmd=0
-BuildCmd=
-
-[Unit11]
 FileName=pizzas.c
-CompileCpp=0
 Folder=
 Compile=1
 Link=1
 Priority=1000
 OverrideBuildCmd=0
 BuildCmd=
+CompileCpp=0
 
-[Unit12]
+[Unit11]
 FileName=pizzas.h
 CompileCpp=0
 Folder=
@@ -167,8 +158,9 @@ Priority=1000
 OverrideBuildCmd=0
 BuildCmd=
 
-[Unit13]
+[Unit12]
 FileName=SistemaPizzaria.dev
+CompileCpp=0
 Folder=
 Compile=0
 Link=0
@@ -176,7 +168,7 @@ Priority=1000
 OverrideBuildCmd=0
 BuildCmd=
 
-[Unit14]
+[Unit13]
 FileName=SistemaPizzaria.exe
 Folder=
 Compile=0
@@ -185,7 +177,7 @@ Priority=1000
 OverrideBuildCmd=0
 BuildCmd=
 
-[Unit15]
+[Unit14]
 FileName=SistemaPizzaria.layout
 Folder=
 Compile=0
@@ -194,17 +186,17 @@ Priority=1000
 OverrideBuildCmd=0
 BuildCmd=
 
-[Unit16]
+[Unit15]
 FileName=sqlite3.c
-CompileCpp=0
 Folder=
 Compile=1
 Link=1
 Priority=1000
 OverrideBuildCmd=0
 BuildCmd=
+CompileCpp=0
 
-[Unit17]
+[Unit16]
 FileName=sqlite3.h
 CompileCpp=0
 Folder=
@@ -214,8 +206,9 @@ Priority=1000
 OverrideBuildCmd=0
 BuildCmd=
 
-[Unit18]
+[Unit17]
 FileName=sqlite3.o
+CompileCpp=0
 Folder=
 Compile=0
 Link=0
@@ -223,8 +216,18 @@ Priority=1000
 OverrideBuildCmd=0
 BuildCmd=
 
-[Unit19]
+[Unit18]
 FileName=util.c
+Folder=
+Compile=1
+Link=1
+Priority=1000
+OverrideBuildCmd=0
+BuildCmd=
+CompileCpp=0
+
+[Unit19]
+FileName=util.h
 CompileCpp=0
 Folder=
 Compile=1
