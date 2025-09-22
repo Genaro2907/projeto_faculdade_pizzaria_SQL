@@ -79,3 +79,26 @@ void listarBebidas(sqlite3 *db) {
     
     sqlite3_finalize(stmt);
 }
+
+void excluirBebida(sqlite3 *db) {
+    int id;
+    listarBebidas(db);
+    printf("Digite o ID da bebida que deseja excluir: ");
+    scanf("%d", &id);
+
+    char sql[100];
+    sprintf(sql, "DELETE FROM Bebidas WHERE id = %d;", id);
+
+    char *err_msg = 0;
+    int rc = sqlite3_exec(db, sql, 0, 0, &err_msg);
+
+    if (rc != SQLITE_OK) {
+        fprintf(stderr, "Erro ao excluir bebida: %s\n", err_msg);
+        sqlite3_free(err_msg);
+    } else {
+        printf("Bebida excluída com sucesso!\n");
+    }
+}
+
+
+

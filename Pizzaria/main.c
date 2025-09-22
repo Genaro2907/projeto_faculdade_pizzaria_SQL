@@ -29,6 +29,9 @@ int main() {
         printf("4. Listar Bebidas\n");
         printf("5. Realizar Pedido\n");
         printf("6. Listar Pedidos\n");
+        printf("7. Excluir Pizza\n");
+        printf("8. Excluir Bebida\n");
+        printf("9. Excluir Pedido\n");
         printf("0. Sair\n");
         printf("Escolha uma opção: ");
         scanf("%d", &opcao);
@@ -52,6 +55,15 @@ int main() {
             case 6:
                 listarPedidos(db);
                 break;
+            case 7:
+                excluirPizza(db);
+                break;
+            case 8:
+                excluirBebida(db);
+                break;
+            case 9:
+                excluirPedido(db);
+                break;
             case 0:
                 printf("Saindo...\n");
                 break;
@@ -63,3 +75,4 @@ int main() {
     sqlite3_close(db);
     return 0;
 }
+

@@ -128,3 +128,24 @@ void listarPedidos(sqlite3 *db) {
     sqlite3_finalize(stmt);
 }
 
+void excluirPedido(sqlite3 *db) {
+    int id;
+    listarPedidos(db);
+    printf("Digite o ID do pedido que deseja excluir: ");
+    scanf("%d", &id);
+
+    char sql[100];
+    sprintf(sql, "DELETE FROM Pedidos WHERE id = %d;", id);
+
+    char *err_msg = 0;
+    int rc = sqlite3_exec(db, sql, 0, 0, &err_msg);
+
+    if (rc != SQLITE_OK) {
+        fprintf(stderr, "Erro ao excluir pedido: %s\n", err_msg);
+        sqlite3_free(err_msg);
+    } else {
+        printf("Pedido excluído com sucesso!\n");
+    }
+}
+
+
