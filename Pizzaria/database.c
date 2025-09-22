@@ -21,16 +21,18 @@ void criarTabelas(sqlite3 *db) {
                               "tamanho TEXT NOT NULL);";
     
     const char *sql_pedidos = "CREATE TABLE IF NOT EXISTS Pedidos ("
-                              "id INTEGER PRIMARY KEY AUTOINCREMENT, "
-                              "cliente TEXT NOT NULL, "
-                              "pizza_id INTEGER, "
-                              "bebida_id INTEGER, "
-                              "quantidade_pizza INTEGER, "
-                              "quantidade_bebida INTEGER, "
-                              "total REAL NOT NULL, "
-                              "data TEXT NOT NULL, "
-                              "FOREIGN KEY(pizza_id) REFERENCES Pizzas(id), "
-                              "FOREIGN KEY(bebida_id) REFERENCES Bebidas(id));";
+							    "id INTEGER PRIMARY KEY AUTOINCREMENT, "
+							    "cliente TEXT NOT NULL,"
+							    "endereco TEXT NOT NULL,"
+							    "telefone TEXT NOT NULL,"
+							    "pizza_id INTEGER,"
+							    "bebida_id INTEGER,"
+							    "quantidade_pizza INTEGER,"
+							    "quantidade_bebida INTEGER,"
+							    "total REAL NOT NULL,"
+							    "FOREIGN KEY(pizza_id) REFERENCES Pizzas(id),"
+							    "FOREIGN KEY(bebida_id) REFERENCES Bebidas(id));";
+    
     
     int rc = sqlite3_exec(db, sql_pizzas, 0, 0, &err_msg);
     if (rc != SQLITE_OK) {
