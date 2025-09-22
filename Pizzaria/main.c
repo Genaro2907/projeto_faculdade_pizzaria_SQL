@@ -1,36 +1,64 @@
 #include <stdio.h>
 #include <stdlib.h>
-#include "sqlite3.h"
+#include <sqlite3.h>
+#include "database.h"
+#include "pizzas.h"
+#include "bebidas.h"
+#include "pedidos.h"
 
 int main() {
     sqlite3 *db;
-    char *err_msg = 0;
-    
-    printf("Iniciando sistema de pizzaria...\n");
-    
     int rc = sqlite3_open("pizzaria.db", &db);
     
     if (rc != SQLITE_OK) {
-        fprintf(stderr, "Erro ao abrir banco: %s\n", sqlite3_errmsg(db));
-        sqlite3_close(db);
+        fprintf(stderr, "Não foi possível abrir o banco de dados: %s\n", sqlite3_errmsg(db));
         return 1;
     }
     
-    printf("? Banco criado/conectado com sucesso!\n");
+    printf("Conectado ao banco de dados SQLite com sucesso!\n");
     
-    const char *sql = "CREATE TABLE IF NOT EXISTS Teste (id INTEGER PRIMARY KEY, nome TEXT);";
-    rc = sqlite3_exec(db, sql, 0, 0, &err_msg);
+    criarTabelas(db);
     
-    if (rc != SQLITE_OK) {
-        fprintf(stderr, "Erro SQL: %s\n", err_msg);
-        sqlite3_free(err_msg);
-        sqlite3_close(db);
-        return 1;
-    }
+    int opcao;
     
-    printf("? Tabela criada com sucesso!\n");
-    printf("Pressione qualquer tecla para sair...\n");
-    getchar();
+    do {
+        printf("\n=== SISTEMA PIZZARIA ===\n");
+        printf("1. Cadastrar Pizza\n");
+        printf("2. Cadastrar Bebida\n");
+        printf("3. Listar Pizzas\n");
+        printf("4. Listar Bebidas\n");
+        printf("5. Realizar Pedido\n");
+        printf("6. Listar Pedidos\n");
+        printf("0. Sair\n");
+        printf("Escolha uma opção: ");
+        scanf("%d", &opcao);
+        
+        switch(opcao) {
+            case 1:
+                cadastrarPizza(db);
+                break;
+            case 2:
+                cadastrarBebida(db);
+                break;
+            case 3:
+                listarPizzas(db);
+                break;
+            case 4:
+                listarBebidas(db);
+                break;
+            case 5:
+                realizarPedido(db);
+                break;
+            case 6:
+                listarPedidos(db);
+                break;
+            case 0:
+                printf("Saindo...\n");
+                break;
+            default:
+                printf("Opção inválida!\n");
+        }
+    } while (opcao != 0);
     
     sqlite3_close(db);
     return 0;
