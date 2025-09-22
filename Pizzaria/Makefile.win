@@ -4,8 +4,8 @@
 CPP      = g++.exe
 CC       = gcc.exe
 WINDRES  = windres.exe
-OBJ      = bebidas.o database.o main.o pedidos.o pizzas.o sqlite3.o
-LINKOBJ  = bebidas.o database.o main.o pedidos.o pizzas.o sqlite3.o
+OBJ      = bebidas.o database.o main.o pedidos.o pizzas.o sqlite3.o util.o
+LINKOBJ  = bebidas.o database.o main.o pedidos.o pizzas.o sqlite3.o util.o
 LIBS     = -L"C:/Users/Gabriel Genaro/Downloads/Dev-Cpp 5.11 TDM-GCC x64 4.9.2 Portable/Dev-Cpp/MinGW64/lib" -L"C:/Users/Gabriel Genaro/Downloads/Dev-Cpp 5.11 TDM-GCC x64 4.9.2 Portable/Dev-Cpp/MinGW64/x86_64-w64-mingw32/lib" -static-libgcc
 INCS     = -I"C:/Users/Gabriel Genaro/Downloads/Dev-Cpp 5.11 TDM-GCC x64 4.9.2 Portable/Dev-Cpp/MinGW64/include" -I"C:/Users/Gabriel Genaro/Downloads/Dev-Cpp 5.11 TDM-GCC x64 4.9.2 Portable/Dev-Cpp/MinGW64/x86_64-w64-mingw32/include" -I"C:/Users/Gabriel Genaro/Downloads/Dev-Cpp 5.11 TDM-GCC x64 4.9.2 Portable/Dev-Cpp/MinGW64/lib/gcc/x86_64-w64-mingw32/4.9.2/include"
 CXXINCS  = -I"C:/Users/Gabriel Genaro/Downloads/Dev-Cpp 5.11 TDM-GCC x64 4.9.2 Portable/Dev-Cpp/MinGW64/include" -I"C:/Users/Gabriel Genaro/Downloads/Dev-Cpp 5.11 TDM-GCC x64 4.9.2 Portable/Dev-Cpp/MinGW64/x86_64-w64-mingw32/include" -I"C:/Users/Gabriel Genaro/Downloads/Dev-Cpp 5.11 TDM-GCC x64 4.9.2 Portable/Dev-Cpp/MinGW64/lib/gcc/x86_64-w64-mingw32/4.9.2/include" -I"C:/Users/Gabriel Genaro/Downloads/Dev-Cpp 5.11 TDM-GCC x64 4.9.2 Portable/Dev-Cpp/MinGW64/lib/gcc/x86_64-w64-mingw32/4.9.2/include/c++"
@@ -41,3 +41,6 @@ pizzas.o: pizzas.c
 
 sqlite3.o: sqlite3.c
 	$(CC) -c sqlite3.c -o sqlite3.o $(CFLAGS)
+
+util.o: util.c
+	$(CC) -c util.c -o util.o $(CFLAGS)
